@@ -1,0 +1,125 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/_mixin.scss";
+
+.mapWrapper {
+  height: 80vh;
+  width: 100%;
+  position: relative;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 85px 0px;
+}
+.phantom {
+  background-color: #f2cc8f;
+  width: 600px;
+  padding: 27px 70px;
+  box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  @media (max-width: $xs) {
+    padding: 27px 20px;
+    width: auto;
+  }
+
+  h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    @media (max-width: 400px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.main1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 85px 0px;
+}
+.geo {
+  background-color: #f2cc8f;
+  border-radius: 15px;
+  width: 600px;
+  padding: 27px 70px;
+  box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  @media (max-width: $xs) {
+    padding: 27px 20px;
+    width: auto;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  .select {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: 48%;
+      outline: none;
+      border: none;
+      font-size: 17px;
+      padding: 18px 10px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+}
+button {
+  background-color: #e07a5f;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+  border-radius: 15px;
+  margin-top: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 13px 55px;
+  border-color: transparent;
+}
+
+.walletconnect {
+  background-color: background3;
+  border: 1px solid transparent;
+  transition: all 0.3s linear;
+  color: heading;
+  line-height: body;
+  font-size: 1.7rem;
+  padding: 0.8rem 6.4rem;
+  height: unset;
+  align-self: flex-end;
+
+  :hover {
+    background: background;
+    color: primary;
+    border-color: primary;
+    cursor: pointer;
+  }
+}
