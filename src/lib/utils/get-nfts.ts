@@ -1,15 +1,22 @@
 import { Connection } from "@metaplex/js";
 import { Metadata } from "@metaplex-foundation/mpl-token-metadata";
+import axios from "axios";
 
-export const getNFTCollections = async () => {
-  var connection = new Connection("mainnet-beta");
+export const getNFTCollections = async (OwnerPublickey: string) => {
+  const connection = new Connection("mainnet-beta");
+  let data = [];
+  try {
+    const nftsmetadata = await Metadata.findDataByOwner(
+      connection,
+      OwnerPublickey
+    );
 
-  const OwnerPublickey = "HWJp4y3mvA8DE58LRAN4wNhf5U3RgcrSo7iYA66gqVqK";
-
-  const nftsmetadata = await Metadata.findDataByOwner(
-    connection,
-    OwnerPublickey
-  );
-
-  console.log(nftsmetadata);
+    for (let i = 0; i < nftsmetadata.length; i++) {
+      const offchain = await axios.get(nftsmetadata[i].data.uri);
+      data.push(offchain.data);
+    }
+    return data;
+  } catch (e) {
+    return data;
+  }
 };

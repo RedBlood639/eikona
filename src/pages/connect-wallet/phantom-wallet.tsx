@@ -20,7 +20,7 @@ const PhantomWallet = ({ setNFTs, setWalletId }: any) => {
   const wallet = useWallet();
 
   useEffect(() => {
-    console.log(getNFTCollections());
+    getNFTCollections("asd");
 
     if (NFTs && wallet?.publicKey?.toString()) {
       setWalletId(wallet?.publicKey?.toString());

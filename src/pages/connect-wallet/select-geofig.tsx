@@ -101,8 +101,6 @@ const SelectGeoFigs = ({ walletId, NFTs }: any) => {
 
       setNFtsList([...tempArr]);
     }
-
-    console.log(NFTsList);
   }, [NFTs]);
 
   return (
