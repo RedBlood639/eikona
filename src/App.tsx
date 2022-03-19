@@ -1,27 +1,28 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import { getNFTCollections } from "./utils/index";
+import "./App.css";
 
-// @page
-import ConnectWallet from "pages/connect-wallet";
+function App() {
+  const [address, setAddress] = useState<string>("");
+  const onHandle = async () => {
+    let data = [];
+    if (address !== "") {
+      data = await getNFTCollections(address);
+    }
 
-// @components
-import WalletProviderSection from "components/WalletProvider/WalletProvider";
-
-import "App.scss";
-import "react-notifications/lib/notifications.css";
-
-const App = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
+    console.log(data);
+  };
   return (
-    <WalletProviderSection>
-      <ConnectWallet />
-    </WalletProviderSection>
+    <div className="App">
+      <input
+        type={"text"}
+        value={address}
+        onChange={(e) => setAddress(e.target.value)}
+      />
+      <button onClick={onHandle}>{"GET"}</button>
+    </div>
   );
-};
+}
 
 export default App;
