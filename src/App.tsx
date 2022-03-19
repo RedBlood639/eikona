@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // @page
 import ConnectWallet from "pages/connect-wallet";
@@ -19,9 +19,7 @@ const App = () => {
 
   return (
     <WalletProviderSection>
-      <Switch>
-        <Route exact path="/" component={ConnectWallet} />
-      </Switch>
+      <ConnectWallet />
     </WalletProviderSection>
   );
 };

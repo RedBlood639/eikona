@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
 }
+
 .main {
   display: flex;
   justify-content: center;
@@ -26,7 +27,6 @@
     padding: 27px 20px;
     width: auto;
   }
-
   h1 {
     font-size: 25px;
     text-align: center;
@@ -36,6 +36,11 @@
       font-size: 20px;
     }
   }
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
 }
 
 .main1 {
@@ -88,6 +93,7 @@
     }
   }
 }
+
 button {
   background-color: #e07a5f;
   color: black;
@@ -122,4 +128,12 @@ button {
     border-color: primary;
     cursor: pointer;
   }
+}
+
+.addressinput {
+  font-size: 20px;
+  height: 35px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid transparent;
 }

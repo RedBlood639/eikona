@@ -98,8 +98,11 @@ const SelectGeoFigs = ({ walletId, NFTs }: any) => {
           image: ele?.offChain?.image,
         });
       });
+
       setNFtsList([...tempArr]);
     }
+
+    console.log(NFTsList);
   }, [NFTs]);
 
   return (
